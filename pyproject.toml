@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kv-prefix-cache-coalescer"
+version = "0.1.0"
+description = "Groups and orders queued agent prompts by longest shared prefix trie to maximize GPU KV-cache hit rates"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+kv-prefix-cache-coalescer = "kv_prefix_cache_coalescer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kv_prefix_cache_coalescer*"]
